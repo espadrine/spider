@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+		<meta charset="utf-8">
+        <title>Have fun programming HTML!</title>
+        <link rel="stylesheet" type="text/css"
+        href="render.css" media="screen">
+        <script type="text/javascript" src="rule.js"></script>
+    </head>
+    <body onload="load();">
+        <div id="left">
+            <h1>The HTML Builder!</h1>
+			<iframe id="design" src="other.html" onmouseout="onSource()"
+			onmouseover="outSource()">
+            </iframe>
+        </div>
+        <div id="right">
+	<p> <small><em>if you want to learn HTML
+                or create webpages</em>
+        	</small></p>
+	<form action="" method="post">
+		<input id="fileselector" type="text">
+		<input type="button" value="load file"
+		onclick="loadFile();"><br>
+
+                <div id="tabs">
+                    <div id="tab1" onclick="sources.switchTab(0);">
+                        <a href="javascript:void(0);">
+                        <img src="images/tab1.png" class="tab" alt="HTML"></a>
+                    </div>
+                    <div id="tab2" onclick="sources.switchTab(1);">
+                        <a href="javascript:void(0);">
+                        <img src="images/tab2.png" class="tab"  alt="CSS"></a>
+                    </div>
+                </div>
+                <pre
+                    id="CSS">/* CSS source */
+</pre>
+                <pre 
+                    id="source">&lt;!-- HTML source --&gt;&lt;div&gt;&lt;h1&gt;Title&lt;/h1&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Text&lt;/p&gt;&lt;/div&gt;</pre>
+	</form>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,54 @@
+/* This sets the rendering of spider */
+
+body {
+	background-color: #aec;
+}
+
+/*!LEFT!*/
+#left {
+	float: left;
+	width: 48%;
+        height: 500px;
+}
+#left iframe {
+    width: 100%;
+    height: 100%;
+    border: navy solid thin;
+    background-color: white;
+}
+
+/*!RIGHT!*/
+#right {
+    position: absolute;
+	float: left;
+	text-align: right;
+	width: 48%;
+        left: 51%;
+        height: 500px;
+}
+#right pre {
+    background-color: silver;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    margin-top:0px;
+    left: 0px;
+    height: 100%;
+}
+a img {
+    border: none;
+}
+#tabs {
+    left: 0px;
+    height: 18px;
+    text-align: left;
+}
+#tab1, #tab2 {
+    float: left;
+    margin-left: 7px;
+}
+.tab {
+    width: 60px;
+    height: 20px;
+}
+
