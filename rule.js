@@ -29,7 +29,7 @@ function load() {
 function updateUI() {
 	if(typeSource)
 		editor.updateView();
-	else
+	else if(document.getElementById("wysiwyg").checked)
 		sources.updateView();
 	setTimeout(updateUI, 100);
 }
@@ -38,7 +38,8 @@ function onSource() {
 	typeSource = true;
 }
 function outSource() {
-	editor.innerDocument.designMode = "on";
+	if(document.getElementById("wysiwyg").checked)
+		editor.innerDocument.designMode = "on";
 	typeSource = false;
 }
 function Source() {
@@ -79,15 +80,15 @@ function designEditor() {
 	this.cssTag = this.innerDocument.getElementsByTagName("style")[0];
 	this.esc = function( text ) {
 		var output = text;
-		output = output.replace(/<br>/g,"\n");
+		output = output.replace(/<br>/g," ").replace(/\n/g, " ");
 		output = output.replace(/&lt;/g,'<').replace(/&gt;/g,'>');
 		return output;
 	}
 	this.updateHTML = function() {
 		var target = this.innerDocument;
 		var weaver = target.body;
-		var source = document.getElementById("source").innerHTML;
-		weaver.innerHTML = this.esc(source);
+		var source = document.getElementById("source").textContent;
+		weaver.innerHTML = source;
 	}
 	this.updateCSS = function() {
 		var source = document.getElementById("CSS").textContent;
